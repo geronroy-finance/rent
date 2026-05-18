@@ -18,7 +18,6 @@ with st.form("credit_form"):
     st.header("פרטי השוכר והנכס")
     
     full_name = st.text_input("שם מלא של השוכר")
-    email_to = st.text_input("לאיזה מייל לשלוח את הדוח הסופי? (המייל שלך)")
     income = st.number_input("הכנסה חודשית", min_value=0)
     
     st.markdown("---")
@@ -42,7 +41,7 @@ if submitted:
             data = {
                 "name": full_name,
                 "income": income,
-                "email_target": geronroy,
+                "email_target": "email@g.com",
                 "status": "Submitted for analysis"
             }
             
