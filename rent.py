@@ -45,8 +45,15 @@ if submitted:
                 "status": "Submitted for analysis"
             }
             
+
+                        # שליחת הבקשה (HTTP POST) ל-Formspree
+            response = requests.post(formspree_url, data=data)
+            
+            if response.status_code == 200:
+                st.success(f"✅ תודה הקבצים נבדקו ונשלחו להחלטת אשראי ")
+                st.balloons()
+            else:
+                st.error("הייתה שגיאה בשליחה. וודא שה-URL של Formspree תקין.")
             # הדמיה של שליחה מוצלחת
-            st.success(f"✅ תודה הקבצים נבדקו ונשלחו להחלטת אשראי ")
-            st.balloons()
             
             st.info("במערכת המלאה, כאן יופיע ניתוח אוטומטי של הדגלים האדומים מה-PDF.")
