@@ -30,7 +30,7 @@ with st.form("credit_form"):
 # לוגיקה של בדיקה ושליחה
 if submitted:
     # 1. בדיקה שכל השדות מולאו
-    if not full_name or not email_to or not credit_report:
+    if not full_name or not credit_report:
         st.error("❌ חסרים פרטים! חובה למלא שם, מייל ולהעלות דוח אשראי.")
     else:
         with st.spinner('מעבד נתונים ושולח למייל...'):
